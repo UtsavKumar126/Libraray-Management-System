@@ -1,5 +1,6 @@
 package com.example.LibrarayManagementSystem.Controllers;
 
+import com.example.LibrarayManagementSystem.DTO.BookRequestDTO;
 import com.example.LibrarayManagementSystem.Models.Book;
 import com.example.LibrarayManagementSystem.Servies.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class BookController {
     BookService bookService;
 
     @PostMapping("/add-book")
-    public String addBook(@RequestBody Book book){
-        return bookService.addBook(book);
+    public String addBook(@RequestBody BookRequestDTO bookdto){
+        return bookService.addBook(bookdto);
     }
 }
